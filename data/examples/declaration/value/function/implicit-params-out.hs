@@ -8,8 +8,8 @@ sort = sortBy ?cmp
 
 sort' ::
   ( ?cmp ::
-      a -> a -> Bool,
-    ?foo :: Int
+      a -> a -> Bool
+  , ?foo :: Int
   ) =>
   [a] ->
   [a]
