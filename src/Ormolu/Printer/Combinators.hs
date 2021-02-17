@@ -228,7 +228,9 @@ braces = brackets_ False "{" "}"
 --
 -- @since 0.1.3.1
 recordDotBraces :: R () -> R ()
-recordDotBraces m = sitcc (vlayout singleLine multiLine)
+recordDotBraces m = do
+    breakpoint
+    inci $ vlayout singleLine multiLine
   where
     singleLine = do
       txt "{"
@@ -236,7 +238,8 @@ recordDotBraces m = sitcc (vlayout singleLine multiLine)
       txt "}"
     multiLine = do
       txt "{"
-      sitcc m
+      space
+      m
       newline
       txt "}"
 
