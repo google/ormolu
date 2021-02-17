@@ -5,6 +5,6 @@ bar' =
          }
 
 fooplus'''' f n =
-  f{foo = n,
-    bar = n
+  f{foo = n
+    , bar = n
    }
